@@ -1,0 +1,353 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  /* ===== Colors ===== */
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+
+  /* ====== Transition ====== */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+/* SideBar */
+
+header {
+  position: fixed;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--sidebar-color);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--tran-03);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+header.close a span,
+header.close .nav .content .name,
+header.close .nav .content input {
+  opacity: 0;
+  transition: var(--tran-03);
+}
+
+header.close .content-bottom li a span {
+  /* display: none; */
+  opacity: 0;
+  transition: var(--tran-03);
+}
+
+header.close .content-bottom .mode span {
+  opacity: 0;
+}
+
+header.close {
+  width: 85px;
+}
+
+.nav {
+  position: relative;
+  width: 250px;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 1001;
+  opacity: 1;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  z-index: 1000;
+  z-index: 1002;
+}
+
+.content .logo {
+  position: relative;
+  z-index: 1003;
+}
+.content .logo .text-avata {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* z-index: 1000; */
+}
+
+.content .logo .avata {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.content .logo .avata span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.content .logo .name {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .logo .name h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3f3f3f;
+}
+
+.content .logo .name span {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.content .logo .arow {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  top: 40px;
+  left: calc(250px - 25px / 2);
+  transform: translateY(-50%) rotate(180deg);
+  right: -25px;
+  transition: var(--tran-03);
+}
+
+.content .logo .arow.close {
+  left: calc(85px - 25px / 2);
+  transform: translateY(-50%) rotate(0);
+}
+
+.content .navbar {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.content .navbar li,
+.content-bottom li {
+  /* width: 100%; */
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.content .navbar input {
+  max-width: calc(100% - 67px);
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--primary-color-light);
+  border-radius: 5px;
+}
+
+.content .navbar input::placeholder {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.icon {
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.content .navbar li a,
+.content-bottom li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: var(--text-color);
+  font-size: 19px;
+  font-weight: 400;
+  /* padding: 10px; */
+  border-radius: 5px;
+  transition: var(--tran-03);
+}
+
+.content .navbar li a:hover,
+.content-bottom li a:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+body.dark .content .navbar li a:hover,
+body.dark .content-bottom li a:hover {
+  background-color: var(--primary-color);
+}
+
+.content .navbar li.nav-active {
+  background-color: var(--primary-color-light);
+  border-radius: 5px;
+}
+
+.content .navbar li.nav-active a:hover {
+  background-color: var(--primary-color-light);
+  color: var(--text-color);
+}
+
+.content-bottom {
+  /* min-width: 85px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 85px; */
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary-color-light);
+  border-radius: 5px;
+  /* overflow: hidden; */
+  text-align: center;
+}
+
+.mode .sun-moon {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  left: 0;
+  /* background-color: var(--primary-color-light); */
+}
+
+.mode span {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-color);
+  transition: var(--tran-03);
+  text-align: center;
+  transition: var(--tran-04);
+}
+
+.mode .sun-moon i {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 25px;
+  font-size: 30px;
+  font-weight: 500;
+  transition: var(--tran-04);
+}
+
+.mode .switch {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  right: 0;
+  background-color: var(--primary-color-light);
+}
+
+.mode .switch .togle-switch {
+  width: 40px;
+  height: 18px;
+  background-color: var(--toggle-color);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--tran-03);
+}
+
+.mode .switch .togle-switch::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  left: 3px;
+  transition: var(--tran-03);
+  /* right: 3px; */
+}
+
+.mode .sun-moon .sun {
+  opacity: 1;
+}
+
+.mode .sun-moon .moon {
+  opacity: 0;
+}
+
+.mode .sun-moon.active .sun {
+  opacity: 0;
+}
+
+.mode .sun-moon.active .moon {
+  opacity: 1;
+}
+
+.mode .switch .togle-switch.active::before {
+  left: 25px;
+}

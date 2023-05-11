@@ -1,0 +1,143 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Menu</title>
+    <!-- Box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Ansome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Side BAR -->
+    <header class="close">
+      <div class="nav">
+        <!-- Content -->
+        <div class="content">
+          <!-- content top -->
+
+          <div class="logo">
+            <div class="text-avata">
+                <div class="avata icon">
+                    <span>AR</span>
+                  </div>
+                  <div class="name">
+                    <h1>Andrew</h1>
+                    <span>Web Developer</span>
+                  </div>
+            </div>
+            <div class="arow close">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+
+          <!-- Content Mid -->
+
+          <ul class="navbar">
+            <li class="nav-active">
+              <a href="#"
+                ><div class="icon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" placeholder="Search..."
+              /></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon">
+                  <i class="bx bx-home-alt"></i>
+                </div>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon"><i class='bx bx-bar-chart-alt-2' ></i></i></div>
+                <span>Revenue</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon">
+                  <i class="fa-regular fa-bell"></i>
+                </div>
+                <span>Notifications</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon">
+                    <i class='bx bx-pie-chart-alt' ></i>
+                </div>
+                <span>Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <span>Likes</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="icon">
+                    <i class='bx bx-wallet' ></i>
+                </div>
+                <span>Wallets</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- content Bottom -->
+
+        <div class="content-bottom">
+          <li>
+            <a href="#">
+              <div class="icon">
+                <i
+                  class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"
+                ></i>
+              </div>
+              <span>Logout</span>
+            </a>
+          </li>
+          <div class="mode">
+            <div class="sun-moon ">
+                <i class='bx bx-moon  moon'></i>
+                <i class='bx bx-sun  sun'></i>
+            </div>
+            <span>Dark Mode</span>
+            <div class="switch">
+              <div class="togle-switch"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+  </body>
+</html>
